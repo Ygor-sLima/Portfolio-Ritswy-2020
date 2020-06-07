@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/b24a60b81f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../assets/styles/scrollbar.css">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@700&display=swap');
+        
+        :root {
+            --lightOrange: #f8f6ed; 
+            --basicGreen: #eaf1e4;
+            --darkerGreen: #bad1a6;
+        }
+
+        * {
+            margin:0;
+            padding: 0;
+            overflow-x: 0;
+        }
+
+        button {
+            border: 0;
+            font-size: 16px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            cursor:pointer;
+            transition: 0.4s;
+        }
+
+        .fRow {
+            display:flex;
+            flex-direction: row;
+        }
+
+        .fColumn {
+            display:flex;
+            flex-direction: column;
+        }
+        .container {
+            max-width:100%;
+            width:100%;
+            min-height:100vh;
+        }
+        .container.light {
+            background-color: #f8f6ed;
+        }
+        .container.dark {
+            background-color: #191919;
+        }
+
+        .container header {
+            justify-content: space-between;
+            align-items: center;
+            padding: 2em 4em;
+            background-color: #f8f6edd3;
+            box-sizing: border-box;
+        }
+
+        header h1 {
+            font-size: 2em;
+            font-family: 'Merriweather', serif;
+        }
+
+        header button {
+            padding: 0.7em 1.6em;
+            background-color:  transparent;
+        }
+
+        header button:hover {
+            opacity: 0.7;
+        }
+
+        button.active {
+            background-color: #bad1a6;
+            border-radius: 2px;
+        }
+
+        nav.container .middle {
+            width: 100%;
+            min-height: 50vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav.container .middle h1 {
+            font-size: 4em;
+        }
+
+        nav.container .middle h2 {
+            font-size: 2em;
+        }
+
+        nav.container footer {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        nav.container footer div:nth-child(1) {
+            width: 50vw;
+            display:flex;
+            flex-direction: row;
+            justify-content: center;
+            justify-self: flex-start;
+            margin-bottom: 2em;
+        }
+
+        nav.container footer div:nth-child(1) button{
+            display: flex;
+            align-items: center;
+            padding: 0.7em 1.6em;
+            background-color: #bad1a6;
+            margin-right: 1em;
+            border-radius: 8px;
+            border: 2px solid #adc499;
+        }
+
+        nav.container footer div:nth-child(1) button:hover{
+            border: 2px solid #94aa81;
+            background-color: #adc499;
+        }
+
+        nav.container footer div:nth-child(1) button i{
+            font-size: 2em;
+            padding-right: 0.2em;
+        }
+
+        nav.container footer div:nth-child(2) {
+            align-items: center;
+            cursor: pointer;
+        }
+
+        nav.container footer div:nth-child(2) i {
+            font-size: 4em;
+        }
+
+        nav.container h1.title {
+            font-family: 'Ubuntu Mono', monospace;
+            padding: 1em;
+            font-size: 3em;
+        }
+
+        nav.container .middle img {
+            height:20em;
+            border-radius: 50%;
+            border: 4px  solid #141414;
+        }
+
+        nav.container.dark {
+            color: #e1e1e1;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        p {
+            font-size: 1.5em;
+            width: 50%;
+            padding: 0 70px;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <nav class="fColumn container light">
+        <header class="fRow">
+            <h1>
+                Ritswy
+            </h1>
+            
+            <div>
+                <button>Contact</button>
+                <button>Register</button>
+                <button class="active">Login</button>
+            </div>
+        </header>
+        <div class="fColumn middle">
+            <h1>Uma frase de efeito brabissima</h1>
+            <h2>Segunda frase de efeito braba</h2>
+        </div>
+        <footer>
+            <div class="fRow">
+                <button><i class="fas fa-gamepad"></i> Jooj</button>
+                <button><i class="fas fa-cubes"></i> Modelagem</button>
+                <button><i class="fas fa-film"></i> Filmes</button>
+            </div>
+
+            <div class="fColumn">
+                <h2>
+                    Saiba mais
+                </h2>
+                <i class="fas fa-angle-double-down"></i>
+            </div>
+        </footer>
+    </nav>
+
+    <nav class="fColumn container dark">
+        <h1 class="title">
+            About Me
+        </h1>
+        <div class="fRow middle" style="margin-top: 2em">
+            <!--../assets/src/Ygor_e_calopsita.jpg-->
+            <img src="../assets/src/Ygor_e_calopsita.jpg" alt="">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa magnam veritatis quam accusamus accusantium ratione natus odio incidunt animi suscipit nemo quidem, id at nobis quos, atque rerum doloremque architecto!Deserunt exercitationem obcaecati nam veniam consequatur, eius incidunt vel rem repudiandae enim facere dolor, cumque harum expedita debitis dolores neque commodi, vero eaque. Error, magnam. Facilis quidem sit magni praesentium.
+
+            </p>
+        </div>
+    </nav>
+
+    <nav class="fColumn container light"></nav>
+</body>
+</html>
+<script>
+    
+</script>
