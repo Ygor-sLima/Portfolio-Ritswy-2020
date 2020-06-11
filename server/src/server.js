@@ -11,7 +11,7 @@ app.use((request, response, next) => {
     next();
 });
 
-app.use('/api', require('./src/controller'));
+app.use('/api', require('./controller'));
 
 const server = app.listen(3000);
 console.log("Express started at port %s", server.address().port);

@@ -13,9 +13,11 @@
         @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@700&display=swap');
         
         :root {
-            --lightOrange: #f8f6ed; 
-            --basicGreen: #eaf1e4;
-            --darkerGreen: #bad1a6;
+            --fundoClaro: #fff7f2;
+            --fundoEscuro: #191919;
+            --verdeClaro: #bad1a6;
+            --verde: #adc499;
+            --verdeEscuro: #94aa81;  
         }
 
         * {
@@ -48,18 +50,19 @@
             min-height:100vh;
         }
         .container.light {
-            background-color: #f8f6ed;
+            background-color: var(--fundoClaro);
         }
         .container.dark {
             background-color: #191919;
         }
 
-        .container header {
+        .container > header {
             justify-content: space-between;
             align-items: center;
             padding: 2em 4em;
-            background-color: #f8f6edd3;
+            background-color: var(--fundoClaro);
             box-sizing: border-box;
+            color: #000;
         }
 
         header h1 {
@@ -77,7 +80,7 @@
         }
 
         button.active {
-            background-color: #bad1a6;
+            background-color: var(--verdeClaro);
             border-radius: 2px;
         }
 
@@ -113,24 +116,25 @@
             margin-bottom: 2em;
         }
 
-        nav.container footer div:nth-child(1) button{
+        nav.container footer button{
             display: flex;
             align-items: center;
             padding: 0.7em 1.6em;
-            background-color: #bad1a6;
+            background-color: var(--verdeClaro);
             margin-right: 1em;
             border-radius: 8px;
-            border: 2px solid #adc499;
+            border: 2px solid var(--verde);
         }
 
-        nav.container footer div:nth-child(1) button:hover{
-            border: 2px solid #94aa81;
-            background-color: #adc499;
+        nav.container footer button:hover{
+            border: 2px solid var(--verdeEscuro);
+            background-color: var(--verde);
         }
 
-        nav.container footer div:nth-child(1) button i{
+        nav.container footer button i{
             font-size: 2em;
             padding-right: 0.2em;
+            padding-left: 0.2em;
         }
 
         nav.container footer div:nth-child(2) {
@@ -163,6 +167,55 @@
             font-size: 1.5em;
             width: 50%;
             padding: 0 70px;
+            text-align: justify;
+        }
+
+        li.fRow {
+            background-color: #fff;
+            padding: 25px 50px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 8px 1px rgba(173,173,173,1);
+            max-width: 40%;
+        }
+
+        ul {
+            width: 100%;
+            min-height: 50vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+        li div {
+            margin-left: 15px;
+        }
+
+        li div header {
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+        }
+
+        li div header p {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2f2f2f;
+            width: auto;
+            padding: 0;
+            display: block;
+        }
+
+        strong.title {
+            justify-self: flex-start;
+            font-size: 24px;
+        }
+
+        strong {
+            font-size: 18px;
+        }
+
+        strong + span {
+            font-size: 14px;
+            margin-bottom: 12px;
             text-align: justify;
         }
     </style>
@@ -213,7 +266,45 @@
         </div>
     </nav>
 
-    <nav class="fColumn container light"></nav>
+    <nav class="fColumn container light">
+        <h1 class="title">Recently watched</h1>
+        <ul class="fRow" style="justify-content: space-around;align-items: center">
+            <li class="fRow">
+                <img width="150px" src="https://m.media-amazon.com/images/M/MV5BZjhhMThhNDItNTY2MC00MmU1LTliNDEtNDdhZjdlNTY5ZDQ1XkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_SX300.jpg" alt="Poster">
+                <div class="fColumn">
+                    <header class="fRow">
+                        <strong class="title">The Kid (1921)</strong>
+                        <p>66min</p>
+                    </header>
+                    <strong>Genre:</strong>
+                    <span>Comedy, Drama, Family</span>
+                    <strong>Directors:</strong>
+                    <span>Charles Chaplin</span>
+                    <strong>Plot:</strong>
+                    <span>The Tramp cares for an abandoned child, but events put that relationship in jeopardy.</span>
+                </div>
+            </li>
+            <li class="fRow">
+                <img width="150px" src="https://m.media-amazon.com/images/M/MV5BMjU0MzBiMDctMmU3NS00NjRkLTkzMzgtZWE3NmExZGI0MmVhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg" alt="Poster">
+                <div class="fColumn">
+                    <header class="fRow">
+                        <strong class="title">The Squid and the Whale (2005)</strong>
+                        <p>88min</p>
+                    </header>
+                    
+                    <strong>Genre:</strong>
+                    <span>Comedy, Drama</span>
+                    <strong>Directors:</strong>
+                    <span>Noah Baumbach</span>
+                    <strong>Plot:</strong>
+                    <span>Follows two young boys dealing with their parents' divorce in Brooklyn in the 1980s.</span>
+                </div>
+            </li>
+        </ul>
+        <footer style="margin-top: 4em">
+            <button>All movies watched <i class="fas fa-arrow-right"></i></button>
+        </footer>
+    </nav>
 </body>
 </html>
 <script>
