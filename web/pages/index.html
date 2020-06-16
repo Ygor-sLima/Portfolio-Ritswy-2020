@@ -4,85 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/b24a60b81f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../assets/styles/general.css">
     <link rel="stylesheet" href="../assets/styles/scrollbar.css">
     <title>Document</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@700&display=swap');
-        
-        :root {
-            --fundoClaro: #fff7f2;
-            --fundoEscuro: #191919;
-            --verdeClaro: #bad1a6;
-            --verde: #adc499;
-            --verdeEscuro: #94aa81;  
-        }
-
-        * {
-            margin:0;
-            padding: 0;
-            overflow-x: 0;
-        }
-
-        button {
-            border: 0;
-            font-size: 16px;
-            font-family: 'Roboto', sans-serif;
-            font-weight: 400;
-            cursor:pointer;
-            transition: 0.4s;
-        }
-
-        .fRow {
-            display:flex;
-            flex-direction: row;
-        }
-
-        .fColumn {
-            display:flex;
-            flex-direction: column;
-        }
-        .container {
-            max-width:100%;
-            width:100%;
-            min-height:100vh;
-        }
-        .container.light {
-            background-color: var(--fundoClaro);
-        }
-        .container.dark {
-            background-color: #191919;
-        }
-
-        .container > header {
-            justify-content: space-between;
-            align-items: center;
-            padding: 2em 4em;
-            background-color: var(--fundoClaro);
-            box-sizing: border-box;
-            color: #000;
-        }
-
-        header h1 {
-            font-size: 2em;
-            font-family: 'Merriweather', serif;
-        }
-
-        header button {
-            padding: 0.7em 1.6em;
-            background-color:  transparent;
-        }
-
-        header button:hover {
-            opacity: 0.7;
-        }
-
-        button.active {
-            background-color: var(--verdeClaro);
-            border-radius: 2px;
-        }
 
         nav.container .middle {
             width: 100%;
@@ -152,14 +77,13 @@
             font-size: 3em;
         }
 
-        nav.container .middle img {
+        nav.container h1 + .middle img {
             height:20em;
             border-radius: 50%;
             border: 4px  solid #141414;
         }
 
         nav.container.dark {
-            color: #e1e1e1;
             font-family: 'Roboto', sans-serif;
         }
 
@@ -187,6 +111,7 @@
 
         li div {
             margin-left: 15px;
+            color: #000;
         }
 
         li div header {
@@ -218,18 +143,44 @@
             margin-bottom: 12px;
             text-align: justify;
         }
+
+        figure.card {
+            width: 50%;
+            padding: 25px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 8px 1px rgba(173,173,173,1);
+        }
+        figure.card>div {
+            width: 50%;
+            margin-right: 15px;
+        }
+        figure.card img {
+            width:100%;
+            height: auto;
+            border-radius: 0;
+            border: 0;
+        }
+        figure.card strong {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
     </style>
 </head>
 <body>
     <nav class="fColumn container light">
-        <header class="fRow">
-            <h1>
-                Ritswy
-            </h1>
+        <header class="fRow main light">
+            <div class="fRow">
+                <h1>
+                    Ritswy
+                </h1>
+                <button class="light">Games</button>
+                <button class="light">Filmes</button>
+                <button class="light">Modelagem</button>
+            </div>
             
             <div>
-                <button>Contact</button>
-                <button>Register</button>
+                <button class="light">Contact</button>
                 <button class="active">Login</button>
             </div>
         </header>
@@ -239,9 +190,15 @@
         </div>
         <footer>
             <div class="fRow">
-                <button><i class="fas fa-gamepad"></i> Jooj</button>
-                <button><i class="fas fa-cubes"></i> Modelagem</button>
-                <button><i class="fas fa-film"></i> Filmes</button>
+                <a href="./jooj.html">
+                    <button><i class="fas fa-gamepad"></i> Games</button>
+                </a>
+                <a href="./modeling.html">
+                    <button><i class="fas fa-cubes"></i> Modelagem</button>
+                </a>
+                <a href="./movies.html">
+                    <button><i class="fas fa-film"></i> Filmes</button>
+                </a>
             </div>
 
             <div class="fColumn">
@@ -255,7 +212,7 @@
 
     <nav class="fColumn container dark">
         <h1 class="title">
-            About Me
+            Sobre mim
         </h1>
         <div class="fRow middle" style="margin-top: 2em">
             <!--../assets/src/Ygor_e_calopsita.jpg-->
@@ -267,7 +224,7 @@
     </nav>
 
     <nav class="fColumn container light">
-        <h1 class="title">Recently watched</h1>
+        <h1 class="title">Assistidos recentemente</h1>
         <ul class="fRow" style="justify-content: space-around;align-items: center">
             <li class="fRow">
                 <img width="150px" src="https://m.media-amazon.com/images/M/MV5BZjhhMThhNDItNTY2MC00MmU1LTliNDEtNDdhZjdlNTY5ZDQ1XkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_SX300.jpg" alt="Poster">
@@ -302,8 +259,37 @@
             </li>
         </ul>
         <footer style="margin-top: 4em">
-            <button>All movies watched <i class="fas fa-arrow-right"></i></button>
+            <a href="./movies.html">
+                <button>All movies watched <i class="fas fa-arrow-right"></i></button>
+            </a>
         </footer>
+    </nav>
+
+    <nav class="fColumn container light">
+        <section class="middle">
+            <h1 class="title">
+                Games
+            </h1>
+            <div class="fRow" style="justify-content: space-around;align-items: center">
+                <figure class="card fRow">
+                    <div class="fColumn">
+                        <img src="https://img.itch.zone/aW1nLzE1NzM1NzEuanBn/347x500/39o1wj.jpg" alt="">
+                    </div>
+                    <div class="fColumn">
+                        <strong>Your creation</strong>
+                        <span>Jogo construído para a BlackthornProd Game Jam 2018. Feito durante uma semana com a proposta de tema "Game Development".</span>
+                    </div>
+                </figure>
+                <a href="./movies.html">
+                    <button class="btnIcon">Veja mais <i class="fas fa-arrow-right"></i></button>
+                </a>
+                <button></button>
+            </div>
+
+        </section>
+        <section class="middle">
+            <h1 class="title">Modelagem</h1>
+        </section>
     </nav>
 </body>
 </html>

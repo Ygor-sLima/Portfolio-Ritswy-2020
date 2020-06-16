@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/b24a60b81f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../assets/styles/scrollbar.css">
+    <link rel="stylesheet" href="../assets/styles/general.css">
+    
+    <title>Paranorman</title>
+    <style>
+        main {
+            margin: 50px;
+            width: 100%;
+            min-width: 60%;
+            max-width:60%;
+            font-size: 18px;
+        }
+
+        main span {
+            margin-top: 15px;
+            justify-content: space-between;
+        }
+
+        main article + article {
+            padding-left: 15px;
+            margin-left: 15px;
+            width: 100%;
+        }
+
+        main article + article h1 {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+        
+        main article + article h1 + * {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        main article + article h1 + span {
+            text-align: justify;
+        }
+
+
+        section {
+            width: 100%;
+        }
+
+        section header {
+            position: relative;
+            font-size: 36px;
+            justify-content: center;
+            align-items: center;
+            margin: 15px 0;
+            padding-bottom: 15px;
+            width: 100%;
+            border-bottom: 2px solid #363636;
+        }
+
+        section header div {
+            position: absolute;
+            left: 0;
+            margin-left: 15px;
+        }
+
+        section div article {
+            text-align: justify;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #363636;
+        }
+
+        section div article div:first-child {
+            align-items: center;
+        }
+
+        section div article i {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        section div article i:first-child{
+            cursor: auto;
+            margin: 0 15px 5px;
+            font-size: 48px;
+        }
+
+        section div article div + div.fColumn {
+            width: 100%;
+            margin-right: 15px;
+        }
+
+        section div article div.fRow {
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="container fRow dark">
+        <main class="fRow">
+            <article>
+                <figure>
+                    <img src="https://m.media-amazon.com/images/M/MV5BMjA1OTU1NDM3N15BMl5BanBnXkFtZTcwMjYxNTg0Nw@@._V1_SX300.jpg" alt="">
+                </figure>
+                <div>
+                    <span class="fRow">
+                        <p>
+                            Minha avaliação:
+                        </p>
+                        <div>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </span>
+                    
+                    <span class="fRow">
+                        <p>
+                            Nota IMDb:
+                        </p>
+                        <div>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </span>
+                    
+                    <span class="fRow">
+                        <p>
+                            Rotten Tomatoes:            
+                        </p>
+                        <div>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            
+                        </div>
+                    </span>
+                </div>
+            </article>
+            <article>
+                <h1>
+                    Título Original:
+                </h1>
+                <strong>
+                    Paranorman
+                </strong>
+                <h1>
+                    Duração:
+                </h1>
+                <span>
+                    92 min
+                </span>
+                <h1>
+                    Lançamento:
+                </h1>
+                <time>
+                    17/08/2012
+                </time>
+                <h1>Diretor:</h1>
+                <span>Chris Butler, Sam Fell</span>
+                <h1>
+                    Genêro:
+                </h1>
+                <span>
+                    Animation, Adventure, Comedy, Family, Fantasy, Mystery
+                </span>
+                <h1>
+                    Plot:
+                </h1>
+                <span>
+                    A misunderstood boy takes on ghosts, zombies and grown-ups to save his town from a centuries-old curse.
+                </span>
+            </article>
+        </main>
+        <section class="light">
+            <header class="fRow"> 
+                <div>
+                    <i class="far fa-comment-alt"></i>
+                </div>
+                <span>
+                    Comentários
+                </span>
+            </header>
+            <div class="fColumn">
+                <article class="fRow">
+                    <div class="fColumn">
+                        <i class="fas fa-user-circle"></i>
+                        <i class="fas fa-chevron-up"></i>
+                        -123
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="fColumn">
+                        <div class="fRow">
+                            <strong>Usuario #1</strong>
+                            <time>15/06/2020</time>
+                        </div>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi beatae corrupti, sapiente alias quos tempore architecto officia aperiam ea quas assumenda modi! Saepe enim nemo, ipsum perspiciatis perferendis libero quidem.
+                    </div>
+                </article>
+                <article class="fRow">
+                    <div class="fColumn">
+                        <i class="fas fa-user-circle"></i>
+                        <i class="fas fa-chevron-up"></i>
+                        754
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="fColumn">
+                        <div class="fRow">
+                            <strong>Usuario #2</strong>
+                            <time>27/05/2020</time>
+                        </div>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi beatae corrupti, sapiente alias quos tempore architecto officia aperiam ea quas assumenda modi! Saepe enim nemo, ipsum perspiciatis perferendis libero quidem.
+                    </div>
+                </article>
+                <article class="fRow">
+                    <div class="fColumn">
+                        <i class="fas fa-user-circle"></i>
+                        <i class="fas fa-chevron-up"></i>
+                        1254
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="fColumn">
+                        <div class="fRow">
+                            <strong>Usuario #3</strong>
+                            <time>23/04/2020</time>
+                        </div>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi beatae corrupti, sapiente alias quos tempore architecto officia aperiam ea quas assumenda modi! Saepe enim nemo, ipsum perspiciatis perferendis libero quidem.
+                    </div>
+                </article>
+            </div>
+        </section>
+    </nav>
+</body>
+</html>
