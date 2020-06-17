@@ -3,14 +3,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@700&display=swap');
         
 :root {
+    --fundoMaisClaro: #363636;
     --fundoClaro: #242424;
     --fundoEscuro: #191919;
+    --verdeEscuro: #141414;
     --verde: #43AB33;
-    --verdeEscuro: #f44b14;
 }
 
 a {
     text-decoration: none;
+    color:inherit;
 }
 
 * {

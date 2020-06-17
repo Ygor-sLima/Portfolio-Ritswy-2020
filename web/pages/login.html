@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/b24a60b81f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../assets/styles/scrollbar.css">
+    <link rel="stylesheet" href="../assets/styles/general.css">
+    <title>LogIn</title>
+
+    <style>
+        form {
+            padding: 25px;
+            margin:auto;
+            width: 30%;
+        }
+
+        form input {
+            border: 0;
+            background-color: var(--fundoMaisClaro);
+            padding: 10px 25px;
+            margin-bottom: 15px;
+            font-size: 24px;
+            line-height: 28px;
+            color: #f1f1f1;
+        }
+
+        form h1 {
+            font-size: 2em;
+            margin-bottom: 25px;
+        }
+
+        form button {
+            margin: 15px 0;
+            padding: 15px 25px;
+            border: 2px solid var(--verde);
+            background-color: transparent;
+            color: white;
+        }
+
+        form button:hover {
+            border: 2px solid var(--fundoEscuro);
+            background-color: var(--verde);
+            color: black;
+        }
+
+        form a {
+            align-self: center;
+            margin-bottom: 10px;
+        }
+
+        form a:hover {
+            text-decoration: underline;
+        }
+
+        div{
+            font-family: 'Ubuntu Mono', monospace;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            margin: 25px;
+            font-size: 18px;
+        }
+        
+        div a {
+            padding: 10px;
+        }
+
+        div:hover span{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav class="container fColumn dark">
+        <div class="fRow">
+            <a href="index.html">
+                <i class="fas fa-arrow-left"></i>
+                <span>Voltar</span>
+            </a>
+        </div>
+        <form action="" class="light fColumn">
+            <h1>LogIn</h1>
+            <input type="email" name="" id="" placeholder="E-mail">
+            <input type="password" name="" id="" placeholder="Senha">
+            <button>Entrar</button>
+            <a href="forgotPassword.html">Esqueceu a senha?</a>
+            <a href="register.html">Ainda não está cadastrado?</a>
+        </form>
+    </nav>
+</body>
+</html>

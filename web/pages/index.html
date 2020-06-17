@@ -52,6 +52,7 @@
         }
 
         nav.container footer button:hover{
+            color: black;
             border: 2px solid var(--verdeEscuro);
             background-color: var(--verde);
         }
@@ -95,11 +96,10 @@
         }
 
         li.fRow {
-            background-color: #fff;
             padding: 25px 50px;
             border-radius: 8px;
-            box-shadow: 0px 0px 8px 1px rgba(173,173,173,1);
             max-width: 40%;
+            background-color: var(--fundoMaisClaro);
         }
 
         ul {
@@ -111,7 +111,6 @@
 
         li div {
             margin-left: 15px;
-            color: #000;
         }
 
         li div header {
@@ -123,7 +122,7 @@
         li div header p {
             font-size: 16px;
             font-weight: 600;
-            color: #2f2f2f;
+            color: #d1d1d1;
             width: auto;
             padding: 0;
             display: block;
@@ -147,9 +146,8 @@
         figure.card {
             width: 50%;
             padding: 25px;
-            background-color: #fff;
             border-radius: 8px;
-            box-shadow: 0px 0px 8px 1px rgba(173,173,173,1);
+            background-color: var(--fundoMaisClaro);
         }
         figure.card>div {
             width: 50%;
@@ -174,14 +172,24 @@
                 <h1>
                     Ritswy
                 </h1>
-                <button class="light">Games</button>
-                <button class="light">Filmes</button>
-                <button class="light">Modelagem</button>
+                <a href="games.html">
+                    <button class="light">Games</button>
+                </a>
+                <a href="movies.html">
+                    <button class="light">Filmes</button>
+                </a>
+                <a href="modelagem.html">
+                    <button class="light">Modelagem</button>
+                </a>
             </div>
             
             <div>
-                <button class="light">Contact</button>
-                <button class="active">Login</button>
+                <a href="contact.html">
+                    <button class="light">Contact</button>
+                </a>
+                <a href="login.html">
+                    <button class="active">Login</button>
+                </a>
             </div>
         </header>
         <div class="fColumn middle">
@@ -226,7 +234,7 @@
     <nav class="fColumn container light">
         <h1 class="title">Assistidos recentemente</h1>
         <ul class="fRow" style="justify-content: space-around;align-items: center">
-            <li class="fRow">
+            <li class="fRow" >
                 <img width="150px" src="https://m.media-amazon.com/images/M/MV5BZjhhMThhNDItNTY2MC00MmU1LTliNDEtNDdhZjdlNTY5ZDQ1XkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_SX300.jpg" alt="Poster">
                 <div class="fColumn">
                     <header class="fRow">
@@ -241,7 +249,7 @@
                     <span>The Tramp cares for an abandoned child, but events put that relationship in jeopardy.</span>
                 </div>
             </li>
-            <li class="fRow">
+            <li class="fRow" >
                 <img width="150px" src="https://m.media-amazon.com/images/M/MV5BMjU0MzBiMDctMmU3NS00NjRkLTkzMzgtZWE3NmExZGI0MmVhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg" alt="Poster">
                 <div class="fColumn">
                     <header class="fRow">
@@ -271,7 +279,7 @@
                 Games
             </h1>
             <div class="fRow" style="justify-content: space-around;align-items: center">
-                <figure class="card fRow">
+                <figure class="card fRow light">
                     <div class="fColumn">
                         <img src="https://img.itch.zone/aW1nLzE1NzM1NzEuanBn/347x500/39o1wj.jpg" alt="">
                     </div>
@@ -283,7 +291,6 @@
                 <a href="./movies.html">
                     <button class="btnIcon">Veja mais <i class="fas fa-arrow-right"></i></button>
                 </a>
-                <button></button>
             </div>
 
         </section>
