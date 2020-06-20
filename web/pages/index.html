@@ -53,7 +53,7 @@
 
         nav.container footer button:hover{
             color: black;
-            border: 2px solid var(--verdeEscuro);
+            border: 2px solid var(--fundoMaisEscuro);
             background-color: var(--verde);
         }
 
@@ -148,6 +148,7 @@
             padding: 25px;
             border-radius: 8px;
             background-color: var(--fundoMaisClaro);
+            position: relative;
         }
         figure.card>div {
             width: 50%;
@@ -162,6 +163,12 @@
         figure.card strong {
             font-size: 24px;
             margin-bottom: 15px;
+        }
+
+        figure button {
+            position:absolute;
+            bottom: 25px;
+            right: 0;
         }
     </style>
 </head>
@@ -287,10 +294,15 @@
                         <strong>Your creation</strong>
                         <span>Jogo construído para a BlackthornProd Game Jam 2018. Feito durante uma semana com a proposta de tema "Game Development".</span>
                     </div>
+                    <button class="btnIcon">
+                        Jogar
+                        <i class="fas fa-play-circle" style="font-size: 1.5em"></i>
+                    </button>
                 </figure>
                 <a href="./movies.html">
                     <button class="btnIcon">Veja mais <i class="fas fa-arrow-right"></i></button>
                 </a>
+                
             </div>
 
         </section>
