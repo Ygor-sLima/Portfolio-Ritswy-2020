@@ -13,22 +13,22 @@ export default function Home() {
                         <h1>
                             Ritswy
                 </h1>
-                        <a href="games.html">
+                        <a href="/games">
                             <button className="light">Games</button>
                         </a>
-                        <a href="movies.html">
+                        <a href="/movies">
                             <button className="light">Filmes</button>
                         </a>
-                        <a href="modelagem.html">
+                        <a href="/modeling">
                             <button className="light">Modelagem</button>
                         </a>
                     </div>
 
                     <div>
-                        <a href="contact.html">
+                        <a href="/contact">
                             <button className="light">Contact</button>
                         </a>
-                        <a href="login.html">
+                        <a href="/login">
                             <button className="active">Login</button>
                         </a>
                     </div>
@@ -39,13 +39,13 @@ export default function Home() {
                 </div>
                 <footer>
                     <div className="fRow">
-                        <a href="./jooj.html">
+                        <a href="/games">
                             <button><i className="fas fa-gamepad"></i> Games</button>
                         </a>
-                        <a href="./modeling.html">
+                        <a href="/games">
                             <button><i className="fas fa-cubes"></i> Modelagem</button>
                         </a>
-                        <a href="./movies.html">
+                        <a href="/movies">
                             <button><i className="fas fa-film"></i> Filmes</button>
                         </a>
                     </div>
@@ -110,7 +110,7 @@ export default function Home() {
                     </li>
                 </ul>
                 <footer style={{marginTop: '4em'}}>
-                    <a href="./movies.html">
+                    <a href="/movies">
                         <button>All movies watched <i className="fas fa-arrow-right"></i></button>
                     </a>
                 </footer>
@@ -138,7 +138,7 @@ export default function Home() {
                             <i className="fas fa-play-circle" style={{fontSize: '1.5em'}}></i>
                             </button>
                         </figure>
-                        <a href="./movies.html">
+                        <a href="/games">
                             <button className="btnIcon">Veja mais <i className="fas fa-arrow-right"></i></button>
                         </a>
 

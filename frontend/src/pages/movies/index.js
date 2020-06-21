@@ -11,20 +11,20 @@ export default function Movies() {
                         <a href="/">
                             <h1>Ritswy</h1>
                         </a>
-                        <a href="games.html">
+                        <a href="/games">
                             <button className="light">Games</button>
                         </a>
                         <button className="light">Filmes</button>
-                        <a href="modelagem.html">
+                        <a href="/modelings">
                             <button className="light">Modelagem</button>
                         </a>
                     </div>
 
                     <div>
-                        <a href="contact.html">
+                        <a href="/contact">
                             <button className="light">Contact</button>
                         </a>
-                        <a href="login.html">
+                        <a href="/login">
                             <button className="active">Login</button>
                         </a>
                     </div>

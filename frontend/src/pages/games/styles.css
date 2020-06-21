@@ -1,0 +1,28 @@
+.gamesContainer main h1 {
+    margin: 50px 0;
+    align-self: center;
+    font-size: 3em;
+}
+
+.gamesContainer div.grid {
+    margin: 50px 0;
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: repeat(3, 315px);
+    gap: 30px;
+    padding: 25px 50px;
+    border-radius: 8px;
+}
+
+.gamesContainer div.grid figure img {
+    object-fit: cover;
+}
+
+.gamesContainer div.grid figure strong {
+    font-size: 1.5em;
+    width: auto;
+}
+
+.gamesContainer div.grid figure strong:hover{
+    text-decoration: underline;
+}

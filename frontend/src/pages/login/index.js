@@ -7,18 +7,19 @@ export default function Login() {
         <div className="loginRegisterContainer">
             <nav className="container fColumn dark">
             <div className="fRow">
-                <a href="index.html">
+                <a href="/">
                     <i className="fas fa-arrow-left"></i>
                     <span>Voltar</span>
                 </a>
             </div>
-            <form action="" className="light fColumn">
+            <form className="light fColumn">
                 <h1>LogIn</h1>
-                <input type="email" name="" id="" placeholder="E-mail" />
-                <input type="password" name="" id="" placeholder="Senha" />
+                <input type="text" name="username" id="" placeholder="Username" />
+                <input type="email" name="email" id="" placeholder="Email" />
+                <input type="password" name="senha" id="" placeholder="Password" />
                 <button>Entrar</button>
-                <a href="forgotPassword.html">Esqueceu a senha?</a>
-                <a href="register.html">Ainda não está cadastrado?</a>
+                <a href="/forgotPassword">Esqueceu a senha?</a>
+                <a href="/register">Ainda não está cadastrado?</a>
             </form>
             </nav>
         </div>

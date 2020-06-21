@@ -1,9 +1,11 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+const cors = require('cors');
+const routes = require('./routes');
+
 const app = express();
 
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json());
+app.use(cors());
+app.use(express.json());
 
 app.use((request, response, next) => {
     response.header("Access-Control-Allow-Origin", "*");
@@ -11,7 +13,7 @@ app.use((request, response, next) => {
     next();
 });
 
-app.use('/api', require('./controller'));
+app.use(routes);
 
-const server = app.listen(3000);
+const server = app.listen(3333);
 console.log("Express started at port %s", server.address().port);

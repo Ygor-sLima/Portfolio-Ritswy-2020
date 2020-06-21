@@ -6,6 +6,8 @@ import Login from './pages/login';
 import Register from './pages/register';
 import Movies from './pages/movies';
 import SpecificMovie from './pages/specificMovie';
+import Games from './pages/games';
+import Profile from './pages/profile';
 
 export default function Routes() {
     return (
@@ -16,6 +18,8 @@ export default function Routes() {
                 <Route path="/register" component={Register} />
                 <Route path="/movies" exact component={Movies} />
                 <Route path="/movies/:id" component={SpecificMovie} />
+                <Route path="/games" component={Games} />
+                <Route path="/profile" component={Profile} />
             </Switch>
         </BrowserRouter>
     )

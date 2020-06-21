@@ -1,4 +1,4 @@
-main {
+.specificMovieContainer main {
     margin: 50px;
     width: 100%;
     min-width: 60%;
@@ -6,37 +6,37 @@ main {
     font-size: 18px;
 }
 
-main span {
+.specificMovieContainer main span {
     margin-top: 15px;
     justify-content: space-between;
 }
 
-main article + article {
+.specificMovieContainer main article + article {
     padding-left: 15px;
     margin-left: 15px;
     width: 100%;
 }
 
-main article + article h1 {
+.specificMovieContainer main article + article h1 {
     font-size: 1.5em;
     margin: 10px 0;
 }
 
-main article + article h1 + * {
+.specificMovieContainer main article + article h1 + * {
     margin-bottom: 10px;
     font-size: 1.2em;
 }
 
-main article + article h1 + span {
+.specificMovieContainer main article + article h1 + span {
     text-align: justify;
 }
 
 
-section {
+.specificMovieContainer section {
     width: 100%;
 }
 
-section header {
+.specificMovieContainer section header {
     position: relative;
     font-size: 36px;
     justify-content: center;
@@ -47,40 +47,40 @@ section header {
     border-bottom: 2px solid #363636;
 }
 
-section header div {
+.specificMovieContainer section header div {
     position: absolute;
     left: 0;
     margin-left: 15px;
 }
 
-section div article {
+.specificMovieContainer section div article {
     text-align: justify;
     margin-bottom: 15px;
     padding-bottom: 15px;
     border-bottom: 2px solid #363636;
 }
 
-section div article div:first-child {
+.specificMovieContainer section div article div:first-child {
     align-items: center;
 }
 
-section div article i {
+.specificMovieContainer section div article i {
     font-size: 24px;
     cursor: pointer;
 }
 
-section div article i:first-child{
+.specificMovieContainer section div article i:first-child{
     cursor: auto;
     margin: 0 15px 5px;
     font-size: 48px;
 }
 
-section div article div + div.fColumn {
+.specificMovieContainer section div article div + div.fColumn {
     width: 100%;
     margin-right: 15px;
 }
 
-section div article div.fRow {
+.specificMovieContainer section div article div.fRow {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
