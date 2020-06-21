@@ -3,20 +3,33 @@ const knex = require('../database/connection');
 module.exports = {
     async create(request, response) {
         const {username, email, senha} = request.body;
-        
         const user = {
             username,
             email,
             senha
         };
+        
+        //Verificando se o email já foi cadastrado
+        const thereIsEmail = await knex('users')
+            .where('email', email);
+        if( thereIsEmail.length > 0 ) {
+            //Enviando resposta
+            return response.json({
+                requisicao: false,
+                message: "Email já cadastrado"
+            })
+        }
 
-        const idUser = await knex('users').insert(user);
+        //Se o email não está cadastrado
+        //Insere os usuarios
+        await knex('users')
+            .insert(user)
+            .then( () => {
+                return response.json({
+                    requisicao: true
+                });
+            });
 
-        return response.json({
-            idUser,
-            user,
-            message: "Okay",
-        });
     },
 
     async show(request, response) {
@@ -52,7 +65,7 @@ module.exports = {
             .where('id', id)
             .del()
             .then( () => {
-                return response.json({Message: true})
+                return response.json({Message: true});
             });
         
     }
