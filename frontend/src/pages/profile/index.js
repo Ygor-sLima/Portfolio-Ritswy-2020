@@ -1,7 +1,15 @@
 import React from 'react';
+import {removerCookie} from '../../services/cookies';
+
 import './styles.css';
 
-export default function Profile() {
+export default function Profile({history}) {
+
+    async function handleLogout() {
+        removerCookie();
+        alert("Você não está mais logado");
+        history.push("/");
+    }
 
     return (
         <div className="profileContainer">
@@ -12,7 +20,7 @@ export default function Profile() {
                     <span>Voltar</span>
                 </a>
             </div>
-            <div className="fRow fixed right">
+            <div className="fRow fixed right" onClick={handleLogout}>
                 <span>SignOut</span>
                 <i className="fas fa-sign-out-alt"></i>
             </div>

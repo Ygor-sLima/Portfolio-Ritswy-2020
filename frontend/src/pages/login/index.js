@@ -6,6 +6,7 @@ import './styles.css';
 export default function Login({history}) {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
+    const [displayErro, setDisplayErro] = useState('none'); 
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -19,7 +20,8 @@ export default function Login({history}) {
             history.push('/profile');
         }
         else {
-            alert(response.data.message);
+            setDisplayErro('flex');
+            document.getElementById('erroMessage').innerHTML = response.data.message;
         }
     }
 
@@ -31,6 +33,10 @@ export default function Login({history}) {
                     <i className="fas fa-arrow-left"></i>
                     <span>Voltar</span>
                 </a>
+            </div>
+            <div className="erroMessage" style={{display: displayErro}}>
+                <span id="erroMessage"></span>
+                <i className="fas fa-times" onClick={() => {setDisplayErro('none')}}></i>
             </div>
             <form onSubmit={handleSubmit} className="light fColumn">
                 <h1>LogIn</h1>
