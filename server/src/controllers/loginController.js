@@ -10,6 +10,7 @@ module.exports = {
         if( senha == data[0].senha )
         {
             return response.json({
+                id: data[0].id,
                 requisicao: true,
             });
         }

@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles.css';
+import Header from '../../components/header';
 import me from '../../assets/Ygor_e_calopsita.jpg';
 
 export default function Home() {
@@ -8,31 +9,7 @@ export default function Home() {
         <div className="homeContainer">
 
             <nav className="fColumn container light">
-                <header className="fRow main light">
-                    <div className="fRow">
-                        <h1>
-                            Ritswy
-                </h1>
-                        <a href="/games">
-                            <button className="light">Games</button>
-                        </a>
-                        <a href="/movies">
-                            <button className="light">Filmes</button>
-                        </a>
-                        <a href="/modeling">
-                            <button className="light">Modelagem</button>
-                        </a>
-                    </div>
-
-                    <div>
-                        <a href="/contact">
-                            <button className="light">Contact</button>
-                        </a>
-                        <a href="/login">
-                            <button className="active">Login</button>
-                        </a>
-                    </div>
-                </header>
+                <Header />
                 <div className="fColumn middle">
                     <h1>Uma frase de efeito brabissima</h1>
                     <h2>Segunda frase de efeito braba</h2>

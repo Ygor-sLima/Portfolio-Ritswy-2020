@@ -12,6 +12,10 @@ export default function Profile() {
                     <span>Voltar</span>
                 </a>
             </div>
+            <div className="fRow fixed right">
+                <span>SignOut</span>
+                <i className="fas fa-sign-out-alt"></i>
+            </div>
             <form action="" className="light fColumn">
                 <h1>Change Profile</h1>
                 <div className="fRow">

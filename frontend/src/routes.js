@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch} from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
+import {isAutenticado} from './services/cookies';
 
 import Home from './pages/home';
 import Login from './pages/login';
@@ -11,16 +12,44 @@ import Profile from './pages/profile';
 import Contact from './pages/contact';
 
 export default function Routes() {
+
+    const LoggedRoute = ({ component: Component, ...rest }) => (
+        <Route
+          {...rest}
+          render={props =>
+            isAutenticado() ? (
+              <Component {...props} />
+            ) : (
+              <Redirect to={{ pathname: "/", state: { from: props.location } }} />
+            )
+          }
+        />
+      );
+    
+      const NotLoggedRoute = ({ component: Component, ...rest }) => (
+        <Route
+          {...rest}
+          render={props =>
+            isAutenticado() ? (
+              <Redirect to={{ pathname: "/", state: { from: props.location } }} />
+              
+            ) : (
+              <Component {...props} />
+            )
+          }
+        />
+      );
+
     return (
         <BrowserRouter>
             <Switch>
                 <Route path="/" exact component={Home} /> 
-                <Route path="/login" component={Login} />
-                <Route path="/register" component={Register} />
+                <NotLoggedRoute path="/login" component={Login} />
+                <NotLoggedRoute path="/register" component={Register} />
                 <Route path="/movies" exact component={Movies} />
                 <Route path="/movies/:id" component={SpecificMovie} />
                 <Route path="/games" component={Games} />
-                <Route path="/profile" component={Profile} />
+                <LoggedRoute path="/profile" component={Profile} />
                 <Route path="/contact" component={Contact} />
             </Switch>
         </BrowserRouter>

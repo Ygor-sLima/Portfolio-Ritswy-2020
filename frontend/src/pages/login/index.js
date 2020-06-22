@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import api from '../../services/api';
+import {armazenarCookie} from '../../services/cookies';
 import './styles.css';
 
 export default function Login({history}) {
@@ -12,6 +13,8 @@ export default function Login({history}) {
         const response = await api.post('/login',{email, senha});
         console.log(response);
         if(response.data.requisicao) {
+            armazenarCookie(response.data.id);
+            
             alert("Login efetuado.");
             history.push('/profile');
         }

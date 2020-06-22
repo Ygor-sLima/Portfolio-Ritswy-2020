@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './styles.css';
+import Header from '../../components/header';
 import api from '../../services/api';
 
 export default function Movies({history}) {
@@ -18,29 +19,7 @@ export default function Movies({history}) {
     return (
         <div className="moviesContainer">
             <nav className="container fColumn dark">
-                <header className="fRow main dark">
-                    <div className="fRow">
-                        <a href="/">
-                            <h1>Ritswy</h1>
-                        </a>
-                        <a href="/games">
-                            <button className="light">Games</button>
-                        </a>
-                        <button className="light">Filmes</button>
-                        <a href="/modelings">
-                            <button className="light">Modelagem</button>
-                        </a>
-                    </div>
-
-                    <div>
-                        <a href="/contact">
-                            <button className="light">Contact</button>
-                        </a>
-                        <a href="/login">
-                            <button className="active">Login</button>
-                        </a>
-                    </div>
-                </header>
+                <Header />
                 <section className="fColumn">
                     <h2>Ache filmes em comum comigo!</h2>
                     <form onSubmit="">
