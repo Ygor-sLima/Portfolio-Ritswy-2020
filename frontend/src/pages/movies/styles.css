@@ -59,6 +59,8 @@
     font-size: 3em;
 }
 
-.moviesContainer figure, img {
+.moviesContainer figure, 
+.moviesContainer img {
     border-radius: 8px;
+    cursor: pointer;
 }

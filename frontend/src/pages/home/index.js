@@ -118,9 +118,7 @@ export default function Home() {
 
             <nav className="fColumn container light">
                 <section className="middle">
-                    <h1 className="title">
-                        Games
-            </h1>
+                    <h1 className="title">Games</h1>
                     <div className="fRow" style={{
                         justifyContent: 'space-around',
                         alignItems: 'center'
@@ -147,8 +145,47 @@ export default function Home() {
                 </section>
                 <section className="middle">
                     <h1 className="title">Modelagem</h1>
+                    <div className="fRow" style={{
+                        justifyContent: 'space-around',
+                        alignItems: 'center'
+                    }}>
+                        <figure className="card fRow light">
+                            <div className="fColumn">
+                                <img src="https://img.itch.zone/aW1nLzE1NzM1NzEuanBn/347x500/39o1wj.jpg" alt="" />
+                            </div>
+                            <div className="fColumn">
+                                <strong>Your creation</strong>
+                                <span>Jogo construído para a BlackthornProd Game Jam 2018. Feito durante uma semana com a proposta de tema "Game Development".</span>
+                            </div>
+                            <button className="btnIcon">
+                                Jogar
+                            <i className="fas fa-play-circle" style={{fontSize: '1.5em'}}></i>
+                            </button>
+                        </figure>
+                        <a href="/games">
+                            <button className="btnIcon">Veja mais <i className="fas fa-arrow-right"></i></button>
+                        </a>
+
+                    </div>
                 </section>
+                <footer className="middle fColumn dark" style={{marginTop: '50px'}}>
+                    <h1 className="title center" >STAY CONNECTED</h1>
+                    <div className="fRow connectContainer">
+                        <i class="fab fa-github"></i>
+                        <i class="fab fa-discord"></i>
+                        <i class="fas fa-envelope" style={{padding: '0'}}></i>
+                    </div>
+                    <div className="fRow buttonsContainer">
+                        <button>Home</button>|
+                        <button>Movies</button>|
+                        <button>Games</button>|
+                        <button>Modeling</button>
+                        
+                    </div>
+                </footer>
             </nav>
+        
+            
         </div>
 
     );

@@ -159,3 +159,51 @@
     bottom: 25px;
     right: 0;
 }
+
+.homeContainer h1.title.center {
+    font-size: 16px;
+    letter-spacing: 4px;
+    align-self: center;
+    margin: 0 0 25px;
+}
+
+.homeContainer .connectContainer {
+    justify-content: center;
+}
+
+.homeContainer .connectContainer i {
+    padding-right: 50px;
+    font-size: 5em;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.homeContainer .connectContainer i:hover {
+    color: var(--verde);
+    opacity: 0.9;
+}
+
+.homeContainer .buttonsContainer {
+    width: 100%;
+    margin-top: 100px;
+    background-color: var(--fundoMaisEscuro);
+    align-items: center;
+}
+
+.homeContainer .buttonsContainer button{
+    margin: 0 !important;
+    width: 100%;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background-color: transparent;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homeContainer .buttonsContainer button:hover {
+    color: #f1f1f1 !important;
+    opacity: 0.5;
+    background-color: transparent !important;
+}

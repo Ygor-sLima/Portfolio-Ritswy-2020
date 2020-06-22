@@ -15,14 +15,25 @@
 }
 
 .gamesContainer div.grid figure img {
+    border-radius: 16px;
     object-fit: cover;
 }
 
+.gamesContainer div.grid figure div {
+    margin: 5px;
+}
+
 .gamesContainer div.grid figure strong {
-    font-size: 1.5em;
+    color: #5cff49;
+    font-size: 1.3em;
     width: auto;
 }
 
 .gamesContainer div.grid figure strong:hover{
     text-decoration: underline;
+}
+
+.gamesContainer div.grid figure span {
+    color: #ffccb1;
+    margin-top: 2px;
 }

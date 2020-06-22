@@ -8,6 +8,7 @@ import Movies from './pages/movies';
 import SpecificMovie from './pages/specificMovie';
 import Games from './pages/games';
 import Profile from './pages/profile';
+import Contact from './pages/contact';
 
 export default function Routes() {
     return (
@@ -20,6 +21,7 @@ export default function Routes() {
                 <Route path="/movies/:id" component={SpecificMovie} />
                 <Route path="/games" component={Games} />
                 <Route path="/profile" component={Profile} />
+                <Route path="/contact" component={Contact} />
             </Switch>
         </BrowserRouter>
     )

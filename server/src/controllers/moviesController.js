@@ -10,7 +10,7 @@ module.exports = {
 
         return response.json({
             movie,
-            message: "Okay",
+            requisicao: true,
         });
     },
 

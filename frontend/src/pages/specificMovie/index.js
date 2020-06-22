@@ -1,7 +1,21 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import api from '../../services/api';
 import './styles.css';
 
-export default function SpecificMovie() {
+export default function SpecificMovie({history, match}) {
+    const idMovie = match.params.id;
+    const [movie, setMovie] = useState({});
+
+    useEffect(() => {
+        async function loadMovie() {
+            const response = await api.get(`/movie/${idMovie}`);
+            
+            if(response.data.requisicao) {
+                setMovie(response.data.movie[0]);
+            }
+        }
+        loadMovie();
+    }, []);
 
     return (
         <div className="specificMovieContainer">
@@ -9,7 +23,7 @@ export default function SpecificMovie() {
                 <main className="fRow">
                     <article>
                         <figure>
-                            <img src="https://m.media-amazon.com/images/M/MV5BMjA1OTU1NDM3N15BMl5BanBnXkFtZTcwMjYxNTg0Nw@@._V1_SX300.jpg" alt="" />
+                            <img src={movie.poster} style={{cursor: 'auto'}} alt="" />
                         </figure>
                         <div>
                             <span className="fRow">
@@ -58,33 +72,33 @@ export default function SpecificMovie() {
                             Título Original:
                 </h1>
                         <strong>
-                            Paranorman
+                            {movie.title}
                 </strong>
                         <h1>
                             Duração:
                 </h1>
                         <span>
-                            92 min
+                            {movie.runtime}
                 </span>
                         <h1>
                             Lançamento:
                 </h1>
                         <time>
-                            17/08/2012
+                            {movie.released}
                 </time>
                         <h1>Diretor:</h1>
-                        <span>Chris Butler, Sam Fell</span>
+                        <span>{movie.director}</span>
                         <h1>
                             Genêro:
                 </h1>
                         <span>
-                            Animation, Adventure, Comedy, Family, Fantasy, Mystery
+                            {movie.genre}
                 </span>
                         <h1>
                             Plot:
                 </h1>
                         <span>
-                            A misunderstood boy takes on ghosts, zombies and grown-ups to save his town from a centuries-old curse.
+                            {movie.plot}
                 </span>
                     </article>
                 </main>
