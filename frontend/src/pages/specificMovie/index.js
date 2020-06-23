@@ -1,10 +1,24 @@
 import React, {useState, useEffect} from 'react';
+import {isAutenticado, getCookie} from '../../services/cookies';
 import api from '../../services/api';
 import './styles.css';
 
 export default function SpecificMovie({history, match}) {
     const idMovie = match.params.id;
     const [movie, setMovie] = useState({});
+    const [comments, setComments] = useState([]);
+    const [comentario, setComentario] = useState('');
+
+    useEffect(() => {
+        async function loadComments() {
+            const response = await api.get(`/comment/${idMovie}`);
+
+            if(response.data.requisicao) {
+                setComments(response.data.comments);
+            }
+        }
+        loadComments();
+    })
 
     useEffect(() => {
         async function loadMovie() {
@@ -17,9 +31,37 @@ export default function SpecificMovie({history, match}) {
         loadMovie();
     }, []);
 
+    async function handleSubmit(e) {
+        e.preventDefault();
+
+        const response = await api.post(`/comment/${idMovie}`,
+            {comment: comentario}, 
+            { headers: {id: getCookie()}});
+        console.log(response);
+        if (response.data.requisicao) {
+            const c = {
+                id: response.data.idComment,
+                fkUser: getCookie(),
+                fkMovie: idMovie,
+                comment: comentario,
+                data: response.data.data,
+                username: response.data.username
+            };
+
+            setComentario('');
+            setComments([...comments, c]);
+        }
+    }
+
     return (
         <div className="specificMovieContainer">
             <nav className="container fRow dark">
+                <div className="fRow fixed">
+                    <a href="/movies">
+                        <i className="fas fa-arrow-left"></i>
+                        <span>Voltar</span>
+                    </a>
+                </div>
                 <main className="fRow">
                     <article>
                         <figure>
@@ -111,56 +153,39 @@ export default function SpecificMovie({history, match}) {
                             Comentários
                 </span>
                     </header>
+                    
                     <div className="fColumn">
-                        <form onSubmit="" className="fColumn">
-                            <input type="text" placeholder="Write your comment here . . ."/>
-                            <button>Comment</button>
-                        </form>
-                        <article className="fRow">
-                            <div className="fColumn">
-                                <i className="fas fa-user-circle"></i>
-                                <i className="fas fa-chevron-up"></i>
-                        -123
-                        <i className="fas fa-chevron-down"></i>
-                            </div>
-                            <div className="fColumn">
-                                <div className="fRow">
-                                    <strong>Usuario #1</strong>
-                                    <time>15/06/2020</time>
+                        {isAutenticado() ?
+                            //Só permite comentar se estiver logado
+                            <form onSubmit={handleSubmit} className="fColumn">
+                                <input 
+                                    type="text" 
+                                    placeholder="Write your comment here . . ."
+                                    value={comentario}
+                                    onChange={e => {setComentario(e.target.value)}}
+                                />
+                                <button>Comment</button>
+                            </form> :
+                            ''
+                        }
+                        
+                        {comments.map( c => (
+                            <article className="fRow" key={c.id}>
+                                <div className="fColumn">
+                                    <i className="fas fa-user-circle"></i>
+                                    <i className="fas fa-chevron-up"></i>
+                                    0
+                                    <i className="fas fa-chevron-down"></i>
                                 </div>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi beatae corrupti, sapiente alias quos tempore architecto officia aperiam ea quas assumenda modi! Saepe enim nemo, ipsum perspiciatis perferendis libero quidem.
-                    </div>
-                        </article>
-                        <article className="fRow">
-                            <div className="fColumn">
-                                <i className="fas fa-user-circle"></i>
-                                <i className="fas fa-chevron-up"></i>
-                        754
-                        <i className="fas fa-chevron-down"></i>
-                            </div>
-                            <div className="fColumn">
-                                <div className="fRow">
-                                    <strong>Usuario #2</strong>
-                                    <time>27/05/2020</time>
+                                <div className="fColumn">
+                                    <div className="fRow">
+                                        <strong>{c.username}</strong>
+                                        <time>{c.data}</time>
+                                    </div>
+                                    {c.comment}
                                 </div>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi beatae corrupti, sapiente alias quos tempore architecto officia aperiam ea quas assumenda modi! Saepe enim nemo, ipsum perspiciatis perferendis libero quidem.
-                    </div>
-                        </article>
-                        <article className="fRow">
-                            <div className="fColumn">
-                                <i className="fas fa-user-circle"></i>
-                                <i className="fas fa-chevron-up"></i>
-                        1254
-                        <i className="fas fa-chevron-down"></i>
-                            </div>
-                            <div className="fColumn">
-                                <div className="fRow">
-                                    <strong>Usuario #3</strong>
-                                    <time>23/04/2020</time>
-                                </div>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi beatae corrupti, sapiente alias quos tempore architecto officia aperiam ea quas assumenda modi! Saepe enim nemo, ipsum perspiciatis perferendis libero quidem.
-                    </div>
-                        </article>
+                            </article>
+                        ))}
                     </div>
                 </section>
             </nav>

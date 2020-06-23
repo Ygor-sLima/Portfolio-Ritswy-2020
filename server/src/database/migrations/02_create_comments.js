@@ -1,14 +1,19 @@
 exports.up = function (knex) {
     return knex.schema.createTable('comments',table => {
         table.increments('id').primary();
-        table.string('fkUser')
+        
+        table.integer('fkUser')
+            .unsigned()
             .notNullable()
             .references('id')
             .inTable('users');
-        table.string('fkMovie')
+        
+        table.integer('fkMovie')
+            .unsigned()
             .notNullable()
             .references('id')
             .inTable('movies');
+
         table.string('comment').notNullable();
         table.date('data').notNullable();
     })

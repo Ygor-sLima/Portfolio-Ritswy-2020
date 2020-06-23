@@ -112,3 +112,25 @@
     align-items: center;
     margin-bottom: 10px;
 }
+
+.specificMovieContainer div.fixed{
+    font-family: 'Ubuntu Mono', monospace;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 10px 15px;
+    font-size: 18px;
+}
+
+.specificMovieContainer div.fixed a {
+    padding: 10px;
+}
+
+.specificMovieContainer div.fixed span {
+    margin-left: 10px;
+}
+
+.specificMovieContainer div.fixed:hover span{
+    text-decoration: underline;
+}
