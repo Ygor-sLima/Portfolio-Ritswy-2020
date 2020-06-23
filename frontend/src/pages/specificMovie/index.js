@@ -174,7 +174,7 @@ export default function SpecificMovie({history, match}) {
                                 <div className="fColumn">
                                     <i className="fas fa-user-circle"></i>
                                     <i className="fas fa-chevron-up"></i>
-                                    0
+                                    {c.likeNumber !== null ? c.likeNumber : 0}
                                     <i className="fas fa-chevron-down"></i>
                                 </div>
                                 <div className="fColumn">

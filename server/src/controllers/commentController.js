@@ -33,8 +33,11 @@ module.exports = {
 
         knex('comments')
             .join('users', 'users.id', 'comments.fkUser')
+            .leftJoin('likes', 'likes.fkComment', 'comments.id')
             .where('fkMovie', idMovie)
+            .groupBy('comments.id')
             .select('comments.*','users.username')
+            .sum('likes.like as likeNumber')
             .catch( err => {
                 return response.json({requisicao: false, message:"Erro ao buscar listagem", reason: err});
             })

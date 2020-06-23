@@ -7,6 +7,7 @@ const moviesController = require('./controllers/moviesController');
 const usersController = require('./controllers/usersController');
 const loginController = require('./controllers/loginController');
 const commentController = require('./controllers/commentController');
+const likeController = require('./controllers/likeController');
 
 //Login
 routes.post('/login', loginController.show);
@@ -27,5 +28,8 @@ routes.get('/dev/movies/:id', devMoviesController.create);
 //Comments
 routes.post('/comment/:idMovie', commentController.create);
 routes.get('/comment/:idMovie', commentController.index);
+
+//Likes
+routes.post('/like/:idComment', likeController.create);
 
 module.exports = routes;
