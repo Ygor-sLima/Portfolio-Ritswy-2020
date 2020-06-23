@@ -36,26 +36,26 @@ module.exports = {
         const {id} = request.params;
 
         const data = await knex('users')
-            .where('id', id);
-
+            .where('id', id)
+            .select('username');
         return response.json(data);
     },
 
     async update(request, response) {
-        const {username, senha} = request.body;
+        const {username} = request.body;
         const {id} = request.headers;
 
         knex('users')
-            .where('id',id)
-            .update({username, senha})
+            .where('id', id)
+            .update({username})
             .then(user => {
                 knex('users')
-                    .where('id', user)
+                    .where('id', id)
                     .then(data => {
-                        return response.json(data);
+                        return response.json({requisicao: true});
                     });
             });
-        
+        return response.json({requisicao: false});
     },
 
     async delete(request, response) {

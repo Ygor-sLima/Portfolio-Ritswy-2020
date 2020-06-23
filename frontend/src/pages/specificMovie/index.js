@@ -112,6 +112,10 @@ export default function SpecificMovie({history, match}) {
                 </span>
                     </header>
                     <div className="fColumn">
+                        <form onSubmit="" className="fColumn">
+                            <input type="text" placeholder="Write your comment here . . ."/>
+                            <button>Comment</button>
+                        </form>
                         <article className="fRow">
                             <div className="fColumn">
                                 <i className="fas fa-user-circle"></i>

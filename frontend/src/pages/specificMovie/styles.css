@@ -53,12 +53,39 @@
     margin-left: 15px;
 }
 
+.specificMovieContainer form {
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #363636;
+    width: 100%;
+}
+
+.specificMovieContainer form input {
+    box-sizing: border-box;
+    width: 100%;
+    color: #f1f1f1;
+    font-size: 16px;
+    line-height: 24px;
+    background-color: inherit;
+    border: 0;
+    padding: 5px 15px;
+}
+.specificMovieContainer form button {
+    background-color: transparent;
+    border-radius: 4px;
+    border: 2px solid var(--verde);
+    padding: 5px 10px;
+    margin: 10px;
+}
+
 .specificMovieContainer section div article {
     text-align: justify;
     margin-bottom: 15px;
     padding-bottom: 15px;
     border-bottom: 2px solid #363636;
 }
+
 
 .specificMovieContainer section div article div:first-child {
     align-items: center;

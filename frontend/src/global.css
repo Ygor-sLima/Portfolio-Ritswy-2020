@@ -20,6 +20,13 @@ a {
     padding: 0;
 }
 
+input:focus,
+button:focus
+{
+    outline-offset: unset;
+    outline: unset;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     color: #f1f1f1;

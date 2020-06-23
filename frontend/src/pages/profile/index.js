@@ -1,9 +1,28 @@
-import React from 'react';
-import {removerCookie} from '../../services/cookies';
+import React, {useState, useEffect} from 'react';
+import {removerCookie, getCookie} from '../../services/cookies';
+import api from '../../services/api';
 
 import './styles.css';
 
 export default function Profile({history}) {
+    const [username, setUsername] = useState('');
+
+
+    useEffect(() => {
+        async function loadUser() {
+            const response = await api.post(`/user/${getCookie()}`);
+            setUsername(response.data[0].username);
+        }
+        loadUser();
+    }, []);
+
+    async function handleSubmit(e) {
+        e.preventDefault();
+
+        const response = await api.patch(`/user`, {username}, { headers: { id: getCookie() }});
+
+        console.log(response);
+    }
 
     async function handleLogout() {
         removerCookie();
@@ -24,18 +43,38 @@ export default function Profile({history}) {
                 <span>SignOut</span>
                 <i className="fas fa-sign-out-alt"></i>
             </div>
-            <form action="" className="light fColumn">
+            <form onSubmit={handleSubmit} className="light fColumn">
                 <h1>Change Profile</h1>
                 <div className="fRow">
                     <i className="fas fa-user-circle"></i>
 
                     <div className="fColumn">
                         <span>Username</span>
-                        <input type="text" name="username" id="" placeholder="Username" />
-                        <input type="password" id="" placeholder="Current Password" />
+                        <input 
+                        type="text" 
+                        placeholder="Username" 
+                        onChange={e => {setUsername(e.target.value)}}
+                        value={username} 
+                        />
+                        <input 
+                            type="password" 
+                            placeholder="Current Password" 
+                            disabled
+                            style={{cursor: "not-allowed"}}
+                        />
                         <div className="fRow doubleInput">
-                            <input type="password" id="" placeholder="New Password" />
-                            <input type="password" id="" placeholder="Password Confirmation" />
+                            <input 
+                                type="password" 
+                                placeholder="New Password" 
+                                disabled
+                                style={{cursor: "not-allowed"}}
+                            />
+                            <input 
+                                type="password" 
+                                placeholder="Password Confirmation" 
+                                disabled
+                                style={{cursor: "not-allowed"}}
+                            />
                         </div>
                         <button>Save</button>
                     </div>
