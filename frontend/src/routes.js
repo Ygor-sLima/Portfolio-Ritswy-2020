@@ -10,6 +10,7 @@ import SpecificMovie from './pages/specificMovie';
 import Games from './pages/games';
 import Profile from './pages/profile';
 import Contact from './pages/contact';
+import DevPage from './pages/devPage';
 
 export default function Routes() {
 
@@ -51,6 +52,7 @@ export default function Routes() {
                 <Route path="/games" component={Games} />
                 <LoggedRoute path="/profile" component={Profile} />
                 <Route path="/contact" component={Contact} />
+                <Route path="/dev" component={DevPage} />
             </Switch>
         </BrowserRouter>
     )

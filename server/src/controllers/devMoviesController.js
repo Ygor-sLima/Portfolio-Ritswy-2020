@@ -30,12 +30,14 @@ module.exports = {
             ratings
         }
         
-        const movie = await knex('movies').insert(movieData);
-
-        return response.json({
-            movie,
-            message: "Okay",
+        knex('movies').insert(movieData)
+        .then( () => {
+            return response.json({requisicao: true});
+        })
+        .catch( () => {
+            return response.json({requisicao: false});
         });
+
     },
 
     async index(request, response) {
@@ -45,6 +47,6 @@ module.exports = {
         .then(function (response) {
             data = response.data;
         })
-        return response.json({data, message: "Ok"});
+        return response.json({data, requisicao: true});
     }
 }

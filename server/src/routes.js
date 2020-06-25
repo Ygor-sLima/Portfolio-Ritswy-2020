@@ -31,5 +31,7 @@ routes.get('/comment/:idMovie', commentController.index);
 
 //Likes
 routes.post('/like/:idComment', likeController.create);
+routes.get('/like', likeController.index);
+routes.patch('/like/:idComment', likeController.update);
 
 module.exports = routes;

@@ -1,0 +1,90 @@
+.devPageContainer form {
+    margin-top: 50px;
+    display: flex;
+}
+
+.devPageContainer input {
+    color: #f1f1f1;
+    background-color: #242424;
+    border: 2px solid #141414;
+    padding: 16px 24px;
+    border-radius: 8px 0 0 8px;
+    font-size: 24px;
+}
+
+.devPageContainer input + input {
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+}
+
+.devPageContainer form button {
+    border-radius: 0 8px 8px 0;
+    border: 2px solid #141414;
+    color: black;
+    background-color: var(--verde);
+    font-size: 16px;
+    height:64px;
+    width: 64px;
+}
+
+.devPageContainer button i{
+    font-size: 2em;
+}
+
+.devPageContainer button:hover {
+    opacity: 0.7;
+}
+
+.devPageContainer section {
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.devPageContainer div.grid {
+    margin-top:100px;
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: repeat(7, 150px);
+    gap: 15px;
+    padding: 25px 50px;
+    background-color: #242424;
+    border-radius: 8px;
+}
+
+.devPageContainer div.grid > h1.title {
+    grid-column: 1 / 8;
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 3em;
+}
+
+.devPageContainer figure {
+    position: relative;
+    background-color: var(--fundoMaisEscuro);
+    border-radius: 8px;
+}
+
+.devPageContainer figure img {
+    border-radius: 8px 8px 0 0;
+}
+
+.devPageContainer figure strong {
+    margin: 10px;
+    margin-bottom: calc(4px + 30px + 16px);
+}
+
+.devPageContainer figure button {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    border-radius: 0 0 8px 8px;
+    border: 2px solid var(--verde);
+    background-color: transparent;
+    padding: 10px 15px;
+}
+
+.devPageContainer figure button:hover {
+    border: 2px solid var(--fundoMaisEscuro);
+    background-color: var(--verde);
+}
