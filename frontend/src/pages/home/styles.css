@@ -189,10 +189,13 @@
     background-color: var(--fundoMaisEscuro);
     align-items: center;
 }
-
-.homeContainer .buttonsContainer button{
-    margin: 0 !important;
+.homeContainer .buttonContainer a {
     width: 100%;
+}
+.homeContainer .buttonsContainer button{
+
+    width: 100%;
+    margin: 0 !important;
     border: 0 !important;
     border-radius: 0 !important;
     background-color: transparent;

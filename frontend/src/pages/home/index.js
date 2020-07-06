@@ -3,7 +3,7 @@ import './styles.css';
 import Header from '../../components/header';
 import me from '../../assets/Ygor_e_calopsita.jpg';
 
-export default function Home() {
+export default function Home({history}) {
 
     return (
         <div className="homeContainer">
@@ -11,19 +11,22 @@ export default function Home() {
             <nav className="fColumn container light">
                 <Header />
                 <div className="fColumn middle">
-                    <h1>Uma frase de efeito brabissima</h1>
-                    <h2>Segunda frase de efeito braba</h2>
+                    <h1>Portfólio 2020</h1>
+                    <h2>Um passo além do mundo artístico.</h2>
                 </div>
                 <footer>
                     <div className="fRow">
+                        <a href="">
+                            <button style={{cursor: 'not-allowed'}}><i className="fas fa-cubes"></i> Modelagem</button>
+                        </a>
                         <a href="/games">
                             <button><i className="fas fa-gamepad"></i> Games</button>
                         </a>
-                        <a href="/games">
-                            <button><i className="fas fa-cubes"></i> Modelagem</button>
-                        </a>
                         <a href="/movies">
                             <button><i className="fas fa-film"></i> Filmes</button>
+                        </a>
+                        <a href="">
+                            <button style={{cursor: 'not-allowed'}}><i class="fas fa-music"></i>Musicas</button>
                         </a>
                     </div>
 
@@ -42,8 +45,7 @@ export default function Home() {
         </h1>
                 <div className="fRow middle" style={{marginTop: '2em'}}>
                     <img src={me} alt="Imagem sobre mim" />
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa magnam veritatis quam accusamus accusantium ratione natus odio incidunt animi suscipit nemo quidem, id at nobis quos, atque rerum doloremque architecto!Deserunt exercitationem obcaecati nam veniam consequatur, eius incidunt vel rem repudiandae enim facere dolor, cumque harum expedita debitis dolores neque commodi, vero eaque. Error, magnam. Facilis quidem sit magni praesentium.
-
+                    <p>Eu, Ritswy. Um amante de pássaros, se encontrou no meio artístico de uma maneira complexa. Começou adorar arte por um meio não tão comum. Por uma necessidade de evolução? Não apenas por isso, mas por ter um propósito maior. Desenvolvimento de games, essa indústria está crescendo cada vez mais, e porque não aprimorar algo relevante tanto para o espírito humano quanto para a indústria brasileira de games.
             </p>
                 </div>
             </nav>
@@ -120,44 +122,24 @@ export default function Home() {
                     </div>
 
                 </section>
-                <section className="middle">
-                    <h1 className="title">Modelagem</h1>
-                    <div className="fRow" style={{
-                        justifyContent: 'space-around',
-                        alignItems: 'center'
-                    }}>
-                        <figure className="card fRow light">
-                            <div className="fColumn">
-                                <img src="https://img.itch.zone/aW1nLzE1NzM1NzEuanBn/347x500/39o1wj.jpg" alt="" />
-                            </div>
-                            <div className="fColumn">
-                                <strong>Your creation</strong>
-                                <span>Jogo construído para a BlackthornProd Game Jam 2018. Feito durante uma semana com a proposta de tema "Game Development".</span>
-                            </div>
-                            <button className="btnIcon">
-                                Jogar
-                            <i className="fas fa-play-circle" style={{fontSize: '1.5em'}}></i>
-                            </button>
-                        </figure>
-                        <a href="/games">
-                            <button className="btnIcon">Veja mais <i className="fas fa-arrow-right"></i></button>
-                        </a>
-
-                    </div>
-                </section>
+                
                 <footer className="middle fColumn dark" style={{marginTop: '50px'}}>
                     <h1 className="title center" >STAY CONNECTED</h1>
                     <div className="fRow connectContainer">
-                        <i class="fab fa-github"></i>
+                        <a href="https://github.com/Ygor-sLima">
+                            <i class="fab fa-github"></i>
+                        </a>
                         <i class="fab fa-discord"></i>
-                        <i class="fas fa-envelope" style={{padding: '0'}}></i>
+                        <a href="/contact">
+                            <i class="fas fa-envelope" style={{padding: '0'}}></i>
+                        </a>
                     </div>
                     <div className="fRow buttonsContainer">
                         <button>Home</button>|
-                        <button>Movies</button>|
-                        <button>Games</button>|
-                        <button>Modeling</button>
-                        
+                        <button style={{cursor: 'not-allowed'}}>Modeling</button>|
+                        <button onClick={ () => {history.push('/movies');}}>Movies</button>|
+                        <button onClick={ () => {history.push('/games');}}>Games</button>|
+                        <button style={{cursor: 'not-allowed'}}>Musicas</button>
                     </div>
                 </footer>
             </nav>

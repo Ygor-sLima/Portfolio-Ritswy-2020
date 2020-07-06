@@ -9,15 +9,19 @@ const Header = ({  }) => {
                 <a href="/">
                     <h1>Ritswy</h1>
                 </a>
+                <a href="" >
+                    <button style={{cursor: 'not-allowed'}} className="light">Modelagem</button>
+                </a>
                 <a href="/games">
                     <button className="light">Games</button>
                 </a>
                 <a href="/movies">
                     <button className="light">Filmes</button>
                 </a>
-                <a href="/modeling">
-                    <button className="light">Modelagem</button>
+                <a href="">
+                    <button style={{cursor: 'not-allowed'}} className="light">Música</button>
                 </a>
+
             </div>
 
             <div>
