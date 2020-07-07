@@ -1,15 +1,16 @@
 import React from 'react';
 import './styles.css';
 import Header from '../../components/header';
+import Footer from '../../components/footer';
 
-export default function Games() {
+export default function Games({history}) {
 
     return (
-        <div className="gamesContainer">
+        <div className="gamesContainer dark">
             <nav className="container fColumn dark">
                 <Header />
                 <main className="fColumn">
-                    <h1>Jogos produzidos</h1>
+                    <h1>Games produced</h1>
 
                     <div className="grid">
                         <figure className="card fColumn">
@@ -50,6 +51,7 @@ export default function Games() {
                     </div>
                 </main>
             </nav>
+            <Footer history={history} />
         </div>
     );
 }

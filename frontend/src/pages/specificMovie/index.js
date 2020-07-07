@@ -127,7 +127,7 @@ export default function SpecificMovie({history, match}) {
                         <div>
                             <span className="fRow">
                                 <p>
-                                    Minha avaliação:
+                                    My Rating:
                         </p>
                                 <div>
                                     <i className="fas fa-star"></i>
@@ -140,7 +140,7 @@ export default function SpecificMovie({history, match}) {
 
                             <span className="fRow">
                                 <p>
-                                    Nota IMDb:
+                                    IMDb Rating:
                         </p>
                                 <div>
                                     <i className="fas fa-star"></i>
@@ -168,27 +168,27 @@ export default function SpecificMovie({history, match}) {
                     </article>
                     <article>
                         <h1>
-                            Título Original:
+                            Title:
                 </h1>
                         <strong>
                             {movie.title}
                 </strong>
                         <h1>
-                            Duração:
+                            Runtime:
                 </h1>
                         <span>
                             {movie.runtime}
                 </span>
                         <h1>
-                            Lançamento:
+                            Release Date:
                 </h1>
                         <time>
                             {movie.released}
                 </time>
-                        <h1>Diretor:</h1>
+                        <h1>Director:</h1>
                         <span>{movie.director}</span>
                         <h1>
-                            Genêro:
+                            Genre:
                 </h1>
                         <span>
                             {movie.genre}
@@ -207,7 +207,7 @@ export default function SpecificMovie({history, match}) {
                             <i className="far fa-comment-alt"></i>
                         </div>
                         <span>
-                            Comentários
+                            Comments
                 </span>
                     </header>
                     

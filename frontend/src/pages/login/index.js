@@ -54,9 +54,9 @@ export default function Login({history}) {
                     value={senha}
                     onChange={e => {setSenha(e.target.value)}}
                 />
-                <button>Entrar</button>
-                <a href="/forgotPassword">Esqueceu a senha?</a>
-                <a href="/register">Ainda não está cadastrado?</a>
+                <button>LogIn</button>
+                <a href="/register">Not registered yet?</a>
+                <a href="/forgotPassword">Forgot your password?</a>
             </form>
             </nav>
         </div>

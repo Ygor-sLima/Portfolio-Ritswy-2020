@@ -114,3 +114,30 @@ button.btnIcon i {
     margin-left: 10px;
     font-size: 2em;
 }
+
+footer.page {
+    width: 100%;
+    margin-top: 50px;
+	background-color: var(--fundoMaisEscuro);
+	align-items: center;
+}
+
+footer.page > button {
+	width: 100%;
+	margin: 0;
+	border: 0;
+	border-radius: 0;
+	padding: 20px 0;
+	background-color: transparent;
+	font-size: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+footer.page > button:hover {
+	color: #f1f1f1;
+	opacity: 0.5;
+	background-color: transparent;
+}
+

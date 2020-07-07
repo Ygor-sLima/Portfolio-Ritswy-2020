@@ -10,16 +10,16 @@ const Header = ({  }) => {
                     <h1>Ritswy</h1>
                 </a>
                 <a href="" >
-                    <button style={{cursor: 'not-allowed'}} className="light">Modelagem</button>
+                    <button style={{cursor: 'not-allowed'}} className="light">3D Modeling</button>
                 </a>
                 <a href="/games">
                     <button className="light">Games</button>
                 </a>
                 <a href="/movies">
-                    <button className="light">Filmes</button>
+                    <button className="light">Movies</button>
                 </a>
                 <a href="">
-                    <button style={{cursor: 'not-allowed'}} className="light">Música</button>
+                    <button style={{cursor: 'not-allowed'}} className="light">Music</button>
                 </a>
 
             </div>

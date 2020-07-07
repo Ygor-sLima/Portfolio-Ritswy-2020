@@ -103,7 +103,7 @@ export default function Register({history}) {
                     <i className="fas fa-times" onClick={() => {setDisplayErro('none')}}></i>
                 </div>
                 <form onSubmit={handleSubmit} className="light fColumn">
-                    <h1>Cadastre-se</h1>
+                    <h1>SignUp</h1>
                     <input
                         required
                         type="text"
@@ -111,7 +111,7 @@ export default function Register({history}) {
                         id="nome"
                         value={username}
                         onChange={e => {setUsername(e.target.value)}}
-                        placeholder="Usuário"
+                        placeholder="Username"
                     />
                     <input
                         required
@@ -120,7 +120,7 @@ export default function Register({history}) {
                         id="email"
                         value={email}
                         onChange={e => {setEmail(e.target.value)}}
-                        placeholder="E-mail"
+                        placeholder="Email"
                     />
                     <input
                         required
@@ -129,7 +129,7 @@ export default function Register({history}) {
                         id="senha"
                         value={senha}
                         onChange={e => {setSenha(e.target.value)}}
-                        placeholder="Senha"
+                        placeholder="Password"
                     />
                     <input
                         required
@@ -137,10 +137,10 @@ export default function Register({history}) {
                         id="confirmacaoSenha"
                         value={confirmarSenha}
                         onChange={e => {setConfirmarSenha(e.target.value)}}
-                        placeholder="Confirmação da senha"
+                        placeholder="Password Confirmation"
                     />
-                    <button>Entrar</button>
-                    <a href="/login">Já está cadastrado?</a>
+                    <button>Sign Up</button>
+                    <a href="/login">Already signed up?</a>
                 </form>
             </nav>
         </div>

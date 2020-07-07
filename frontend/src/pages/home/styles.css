@@ -182,31 +182,3 @@
     color: var(--verde);
     opacity: 0.9;
 }
-
-.homeContainer .buttonsContainer {
-    width: 100%;
-    margin-top: 100px;
-    background-color: var(--fundoMaisEscuro);
-    align-items: center;
-}
-.homeContainer .buttonContainer a {
-    width: 100%;
-}
-.homeContainer .buttonsContainer button{
-
-    width: 100%;
-    margin: 0 !important;
-    border: 0 !important;
-    border-radius: 0 !important;
-    background-color: transparent;
-    font-size: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.homeContainer .buttonsContainer button:hover {
-    color: #f1f1f1 !important;
-    opacity: 0.5;
-    background-color: transparent !important;
-}

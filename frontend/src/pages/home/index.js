@@ -1,38 +1,39 @@
 import React from 'react';
 import './styles.css';
+import Footer from '../../components/footer';
 import Header from '../../components/header';
 import me from '../../assets/Ygor_e_calopsita.jpg';
 
 export default function Home({history}) {
 
     return (
-        <div className="homeContainer">
+        <div className="homeContainer dark">
 
             <nav className="fColumn container light">
                 <Header />
                 <div className="fColumn middle">
-                    <h1>Portfólio 2020</h1>
-                    <h2>Um passo além do mundo artístico.</h2>
+                    <h1>Portfolio 2020</h1>
+                    <h2>A step beyond the artistic world.</h2>
                 </div>
                 <footer>
                     <div className="fRow">
                         <a href="">
-                            <button style={{cursor: 'not-allowed'}}><i className="fas fa-cubes"></i> Modelagem</button>
+                            <button style={{cursor: 'not-allowed'}}><i className="fas fa-cubes"></i> 3D Modeling</button>
                         </a>
                         <a href="/games">
                             <button><i className="fas fa-gamepad"></i> Games</button>
                         </a>
                         <a href="/movies">
-                            <button><i className="fas fa-film"></i> Filmes</button>
+                            <button><i className="fas fa-film"></i> Movies</button>
                         </a>
                         <a href="">
-                            <button style={{cursor: 'not-allowed'}}><i class="fas fa-music"></i>Musicas</button>
+                            <button style={{cursor: 'not-allowed'}}><i class="fas fa-music"></i>Music</button>
                         </a>
                     </div>
 
                     <div className="fColumn">
                         <h2>
-                            Saiba mais
+                            Read More
                 </h2>
                         <i className="fas fa-angle-double-down"></i>
                     </div>
@@ -41,17 +42,18 @@ export default function Home({history}) {
 
             <nav className="fColumn container dark">
                 <h1 className="title">
-                    Sobre mim
+                    About me
         </h1>
                 <div className="fRow middle" style={{marginTop: '2em'}}>
                     <img src={me} alt="Imagem sobre mim" />
-                    <p>Eu, Ritswy. Um amante de pássaros, se encontrou no meio artístico de uma maneira complexa. Começou adorar arte por um meio não tão comum. Por uma necessidade de evolução? Não apenas por isso, mas por ter um propósito maior. Desenvolvimento de games, essa indústria está crescendo cada vez mais, e porque não aprimorar algo relevante tanto para o espírito humano quanto para a indústria brasileira de games.
+                    <p>
+			Me, Ritswy. A bird lover, found yourself in the artistic path in a complex way. Started loving art by a non-common way. By a necessity of evolution, and not only that, but for a bigger meaning. Game development, this industry is growing bigger, and why not improve something relevant not only for the human spirity and for the brazilian game industry.
             </p>
                 </div>
             </nav>
 
             <nav className="fColumn container light">
-                <h1 className="title">Assistidos recentemente</h1>
+                <h1 className="title">Recently Watched</h1>
                 <ul className="fRow" style={{
                     justifyContent: 'space-around',
                     alignItems: 'center'
@@ -90,7 +92,7 @@ export default function Home({history}) {
                 </ul>
                 <footer style={{marginTop: '4em'}}>
                     <a href="/movies">
-                        <button>All movies watched <i className="fas fa-arrow-right"></i></button>
+                        <button>Recently watched<i className="fas fa-arrow-right"></i></button>
                     </a>
                 </footer>
             </nav>
@@ -108,15 +110,17 @@ export default function Home({history}) {
                             </div>
                             <div className="fColumn">
                                 <strong>Your creation</strong>
-                                <span>Jogo construído para a BlackthornProd Game Jam 2018. Feito durante uma semana com a proposta de tema "Game Development".</span>
+                                <span>
+				Game built for the BlackthornProd Game Jam 2018. Made during a week based on the theme "Game Development".
+				</span>
                             </div>
                             <button className="btnIcon">
-                                Jogar
+                                Play
                             <i className="fas fa-play-circle" style={{fontSize: '1.5em'}}></i>
                             </button>
                         </figure>
                         <a href="/games">
-                            <button className="btnIcon">Veja mais <i className="fas fa-arrow-right"></i></button>
+                            <button className="btnIcon">More <i className="fas fa-arrow-right"></i></button>
                         </a>
 
                     </div>
@@ -124,7 +128,7 @@ export default function Home({history}) {
                 </section>
                 
                 <footer className="middle fColumn dark" style={{marginTop: '50px'}}>
-                    <h1 className="title center" >STAY CONNECTED</h1>
+                    <h1 className="title center">STAY CONNECTED</h1>
                     <div className="fRow connectContainer">
                         <a href="https://github.com/Ygor-sLima">
                             <i class="fab fa-github"></i>
@@ -134,18 +138,9 @@ export default function Home({history}) {
                             <i class="fas fa-envelope" style={{padding: '0'}}></i>
                         </a>
                     </div>
-                    <div className="fRow buttonsContainer">
-                        <button>Home</button>|
-                        <button style={{cursor: 'not-allowed'}}>Modeling</button>|
-                        <button onClick={ () => {history.push('/movies');}}>Movies</button>|
-                        <button onClick={ () => {history.push('/games');}}>Games</button>|
-                        <button style={{cursor: 'not-allowed'}}>Musicas</button>
-                    </div>
                 </footer>
-            </nav>
-        
-            
+            </nav>        
+            <Footer history={history} />
         </div>
-
     );
 }
