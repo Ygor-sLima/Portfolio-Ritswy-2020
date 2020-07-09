@@ -1,11 +1,12 @@
 const axios = require('axios');
+require('dotenv-safe').config();
 const knex = require('../database/connection');
 
 module.exports = {
     async create(request, response) {
         const {id} = request.params;
         let data;
-        await axios.get(`http://www.omdbapi.com/?apikey=e6a338cb&i=${id}`)
+        await axios.get(`http://www.omdbapi.com/?apikey=${process.env.OMDBKey}&i=${id}`)
         .then(function (response) {
             data = response.data;
         });
@@ -43,7 +44,7 @@ module.exports = {
     async index(request, response) {
         const { s, y, page } = request.query;
         let data;
-        await axios.get(`http://www.omdbapi.com/?apikey=e6a338cb&s=${s}&y=${y}&type=movie&page=${page}`)
+        await axios.get(`http://www.omdbapi.com/?apikey=${process.env.OMDBKey}&s=${s}&y=${y}&type=movie&page=${page}`)
         .then(function (response) {
             data = response.data;
         })
