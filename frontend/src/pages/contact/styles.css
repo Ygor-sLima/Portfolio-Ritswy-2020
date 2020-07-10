@@ -43,28 +43,6 @@
     text-decoration: underline;
 }
 
-.contactContainer div{
-    font-family: 'Ubuntu Mono', monospace;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    margin: 25px;
-    font-size: 18px;
-}
-
-.contactContainer div a {
-    padding: 10px;
-}
-
-.contactContainer div span {
-    margin-left: 10px;
-}
-
-.contactContainer div:hover span{
-    text-decoration: underline;
-}
-
 .contactContainer textarea {
     overflow: auto;
     resize: vertical;

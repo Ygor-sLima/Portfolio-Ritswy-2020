@@ -1,30 +1,31 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import '../login/styles.css';
+import FixedIconLink from '../../components/fixedIconLink';
 import api from '../../services/api';
 
-export default function Register({history}) {
+export default function Register({ history }) {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const [username, setUsername] = useState('');
     const [confirmarSenha, setConfirmarSenha] = useState('');
-    const [displayErro, setDisplayErro] = useState('none'); 
+    const [displayErro, setDisplayErro] = useState('none');
 
     async function handleSubmit(e) {
         e.preventDefault();
         document.getElementById('erroMessage').innerHTML = "";
 
-        if(senha.length < 8) {
+        if (senha.length < 8) {
             //Fazer mostrar errorMEssage
             setDisplayErro('flex');
             document.getElementById('erroMessage').innerHTML += 'A senha precisa conter ao menos 8 caracteres';
             return;
         }
-        if(senha != confirmarSenha) {
+        if (senha != confirmarSenha) {
             setDisplayErro('flex');
             document.getElementById('erroMessage').innerHTML += 'As senhas precisam ser iguais';
             return;
         }
-        if(username.length < 4) {
+        if (username.length < 4) {
             setDisplayErro('flex');
             document.getElementById('erroMessage').innerHTML += 'Usuario precisa ter ao menos 4 caracteres';
             return;
@@ -36,10 +37,10 @@ export default function Register({history}) {
         let naoAlfaNumerico;
 
         //Lista de caracteres para verificacao
-        let alfabetoMinusculo="abcdefghijklmnopqrstuvwxyz";
-        let alfabetoMaiusculo="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        let listaNumeros="0123456789";
-        let listaNaoAlfaNumericos="!@#$%*()_+^&{}}:;?.";
+        let alfabetoMinusculo = "abcdefghijklmnopqrstuvwxyz";
+        let alfabetoMaiusculo = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        let listaNumeros = "0123456789";
+        let listaNaoAlfaNumericos = "!@#$%*()_+^&{}}:;?.";
 
         //Transforma string em array
         alfabetoMaiusculo = alfabetoMaiusculo.split("");
@@ -48,39 +49,39 @@ export default function Register({history}) {
         listaNaoAlfaNumericos = listaNaoAlfaNumericos.split("");
 
         //Percorrendo todo o array e verificando se tem ao menos um dentro da senha
-        alfabetoMinusculo.map( letra => {
-            if(senha.indexOf(letra) != -1) {
+        alfabetoMinusculo.map(letra => {
+            if (senha.indexOf(letra) != -1) {
                 minusculo = true;
             }
         });
-        alfabetoMaiusculo.map( letra => {
-            if(senha.indexOf(letra) != -1) {
+        alfabetoMaiusculo.map(letra => {
+            if (senha.indexOf(letra) != -1) {
                 maiusculo = true;
             }
         });
-        listaNumeros.map( letra => {
-            if(senha.indexOf(letra) != -1) {
+        listaNumeros.map(letra => {
+            if (senha.indexOf(letra) != -1) {
                 numero = true;
             }
         });
-        listaNaoAlfaNumericos.map( letra => {
-            if(senha.indexOf(letra) != -1) {
+        listaNaoAlfaNumericos.map(letra => {
+            if (senha.indexOf(letra) != -1) {
                 naoAlfaNumerico = true;
             }
         });
         //Verificando se continha algum dos necessarios
-        if(!maiusculo || !minusculo || !numero || !naoAlfaNumerico) {
-            let mensagem = `A senha precisa conter: ${maiusculo ? "" : "<br>Letras em maiusculo" }${minusculo ? "" : "<br>Letras em minusculo" }${numero ? "" : "<br>Números" }${naoAlfaNumerico ? "": "<br>Caracteres não alfanumérico "}`;
+        if (!maiusculo || !minusculo || !numero || !naoAlfaNumerico) {
+            let mensagem = `A senha precisa conter: ${maiusculo ? "" : "<br>Letras em maiusculo"}${minusculo ? "" : "<br>Letras em minusculo"}${numero ? "" : "<br>Números"}${naoAlfaNumerico ? "" : "<br>Caracteres não alfanumérico "}`;
             setDisplayErro('flex');
             document.getElementById('erroMessage').innerHTML = mensagem;
             return;
         }
 
-            
 
 
-        const response = await api.post('/user', {email, senha, username});
-        if( response.data.requisicao ) {
+
+        const response = await api.post('/user', { email, senha, username });
+        if (response.data.requisicao) {
             alert("Cadastro feito");
             history.push('/login');
         } else {
@@ -92,15 +93,17 @@ export default function Register({history}) {
     return (
         <div className="loginRegisterContainer">
             <nav className="container fColumn dark">
-                <div className="fRow">
-                    <a href="/">
-                        <i className="fas fa-arrow-left"></i>
-                        <span>Voltar</span>
-                    </a>
-                </div>
-                <div className="erroMessage" style={{display: displayErro}}>
+                <FixedIconLink
+                    to={() => { history.push("/") }}
+                    right={false}
+                >
+                    <i className="fas fa-arrow-left"></i>
+                    <span>GoBack</span>
+                </FixedIconLink>
+
+                <div className="erroMessage" style={{ display: displayErro }}>
                     <span id="erroMessage"></span>
-                    <i className="fas fa-times" onClick={() => {setDisplayErro('none')}}></i>
+                    <i className="fas fa-times" onClick={() => { setDisplayErro('none') }}></i>
                 </div>
                 <form onSubmit={handleSubmit} className="light fColumn">
                     <h1>SignUp</h1>
@@ -110,7 +113,7 @@ export default function Register({history}) {
                         name="name"
                         id="nome"
                         value={username}
-                        onChange={e => {setUsername(e.target.value)}}
+                        onChange={e => { setUsername(e.target.value) }}
                         placeholder="Username"
                     />
                     <input
@@ -119,7 +122,7 @@ export default function Register({history}) {
                         name="email"
                         id="email"
                         value={email}
-                        onChange={e => {setEmail(e.target.value)}}
+                        onChange={e => { setEmail(e.target.value) }}
                         placeholder="Email"
                     />
                     <input
@@ -128,7 +131,7 @@ export default function Register({history}) {
                         name="senha"
                         id="senha"
                         value={senha}
-                        onChange={e => {setSenha(e.target.value)}}
+                        onChange={e => { setSenha(e.target.value) }}
                         placeholder="Password"
                     />
                     <input
@@ -136,7 +139,7 @@ export default function Register({history}) {
                         type="password"
                         id="confirmacaoSenha"
                         value={confirmarSenha}
-                        onChange={e => {setConfirmarSenha(e.target.value)}}
+                        onChange={e => { setConfirmarSenha(e.target.value) }}
                         placeholder="Password Confirmation"
                     />
                     <button>Sign Up</button>

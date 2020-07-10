@@ -1,10 +1,11 @@
-import React, {useState, useEffect} from 'react';
-import {removerCookie, getCookie} from '../../services/cookies';
+import React, { useState, useEffect } from 'react';
+import { removerCookie, getCookie } from '../../services/cookies';
 import api from '../../services/api';
+import FixedIconLink from '../../components/fixedIconLink'
 
 import './styles.css';
 
-export default function Profile({history}) {
+export default function Profile({ history }) {
     const [username, setUsername] = useState('');
 
 
@@ -19,7 +20,7 @@ export default function Profile({history}) {
     async function handleSubmit(e) {
         e.preventDefault();
 
-        const response = await api.patch(`/user`, {username}, { headers: { id: getCookie() }});
+        const response = await api.patch(`/user`, { username }, { headers: { id: getCookie() } });
 
         console.log(response);
     }
@@ -27,59 +28,64 @@ export default function Profile({history}) {
     async function handleLogout() {
         removerCookie();
         alert("Você não está mais logado");
-        history.push("/");
+        history.goBack();
     }
 
     return (
         <div className="profileContainer">
             <nav className="container fColumn dark">
-            <div className="fRow fixed">
-                <a href="/">
+                <FixedIconLink
+                    right={false}
+                    to={history.goBack}
+                >
                     <i className="fas fa-arrow-left"></i>
-                    <span>Voltar</span>
-                </a>
-            </div>
-            <div className="fRow fixed right" onClick={handleLogout}>
-                <span>SignOut</span>
-                <i className="fas fa-sign-out-alt"></i>
-            </div>
-            <form onSubmit={handleSubmit} className="light fColumn">
-                <h1>Change Profile</h1>
-                <div className="fRow">
-                    <i className="fas fa-user-circle"></i>
+                    <span>GoBack</span>
+                </FixedIconLink>
 
-                    <div className="fColumn">
-                        <span>Username</span>
-                        <input 
-                        type="text" 
-                        placeholder="Username" 
-                        onChange={e => {setUsername(e.target.value)}}
-                        value={username} 
-                        />
-                        <input 
-                            type="password" 
-                            placeholder="Current Password" 
-                            disabled
-                            style={{cursor: "not-allowed"}}
-                        />
-                        <div className="fRow doubleInput">
-                            <input 
-                                type="password" 
-                                placeholder="New Password" 
-                                disabled
-                                style={{cursor: "not-allowed"}}
+                <FixedIconLink
+                    right={true}
+                    to={handleLogout}
+                >
+                    <i className="fas fa-sign-out-alt"></i>
+                    <span>SignOut</span>
+                </FixedIconLink>
+                <form onSubmit={handleSubmit} className="light fColumn">
+                    <h1>Change Profile</h1>
+                    <div className="fRow">
+                        <i className="fas fa-user-circle"></i>
+
+                        <div className="fColumn">
+                            <span>Username</span>
+                            <input
+                                type="text"
+                                placeholder="Username"
+                                onChange={e => { setUsername(e.target.value) }}
+                                value={username}
                             />
-                            <input 
-                                type="password" 
-                                placeholder="Password Confirmation" 
+                            <input
+                                type="password"
+                                placeholder="Current Password"
                                 disabled
-                                style={{cursor: "not-allowed"}}
+                                style={{ cursor: "not-allowed" }}
                             />
+                            <div className="fRow doubleInput">
+                                <input
+                                    type="password"
+                                    placeholder="New Password"
+                                    disabled
+                                    style={{ cursor: "not-allowed" }}
+                                />
+                                <input
+                                    type="password"
+                                    placeholder="Password Confirmation"
+                                    disabled
+                                    style={{ cursor: "not-allowed" }}
+                                />
+                            </div>
+                            <button>Save</button>
                         </div>
-                        <button>Save</button>
                     </div>
-                </div>
-            </form>
+                </form>
             </nav>
         </div>
     );

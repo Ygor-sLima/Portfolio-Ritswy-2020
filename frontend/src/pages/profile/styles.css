@@ -56,40 +56,7 @@
     margin-left: 15px;
 }
 
-.profileContainer div.fixed{
-    font-family: 'Ubuntu Mono', monospace;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    margin: 25px;
-    font-size: 18px;
-}
-
-.profileContainer div.fixed.right {
-    padding: 10px;
-    cursor: pointer;
-    left:unset;
-    right: 0;
-}
-
-.profileContainer div.fixed.right i {
+.profileContainer .fixedLink.right i {
     font-size: 24px;
     color: red;
-}
-
-.profileContainer div.fixed a {
-    padding: 10px;
-}
-
-.profileContainer div.fixed span {
-    margin-left: 10px;
-}
-
-.profileContainer div.fixed.right span {
-    margin: 0 10px 0 0;
-}
-
-.profileContainer div.fixed:hover span{
-    text-decoration: underline;
 }

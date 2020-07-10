@@ -42,28 +42,6 @@
     text-decoration: underline;
 }
 
-.loginRegisterContainer div{
-    font-family: 'Ubuntu Mono', monospace;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    margin: 25px;
-    font-size: 18px;
-}
-
-.loginRegisterContainer div a {
-    padding: 10px;
-}
-
-.loginRegisterContainer div span {
-    margin-left: 10px;
-}
-
-.loginRegisterContainer div:hover span{
-    text-decoration: underline;
-}
-
 .loginRegisterContainer div.erroMessage {
     position: fixed;
     right: 0;
