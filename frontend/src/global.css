@@ -141,3 +141,32 @@ footer.page > button:hover {
 	background-color: transparent;
 }
 
+.fixedLink {
+	font-family: 'Ubuntu Mono', monospace;
+	padding: 10px;
+	cursor: pointer;
+	align-items:center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	margin: 25px;
+	font-size: 18px;
+}
+
+.fixedLink span {
+	margin-left: 10px;
+}
+
+.fixedLink:hover span {
+	text-decoration: underline;
+}
+
+.fixedLink.right {
+	left: unset;
+	right: 0;
+	flex-direction: row-reverse;
+}
+
+.fixedLink.right span {
+	margin: 0 10px 0 0;
+}
