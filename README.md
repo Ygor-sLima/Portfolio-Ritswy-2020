@@ -6,6 +6,10 @@ A portfolio about my hobbies nowadays, actually doing it to compare in the futur
 - CD to **server** directory, and install dependencies with:
 
   > npm install
+
+- Run the following command to create the database
+  
+  > npm run knex:migrate
   
 - Type this to start the server:
 
